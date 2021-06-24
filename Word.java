@@ -23,10 +23,11 @@ public class Word {
 
     }
 
-//    public Word(String defaultTranslation, String miwokTranslation){
-//        mDefaultTranslation = defaultTranslation;
-//        mMiwokTranslation = miwokTranslation;
-//    }
+    public Word(String defaultTranslation, String miwokTranslation,int audioResourceId){
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+          mAudioResourceId = audioResourceId;
+    }
 
     public String getDefaultTranslation() {
         return mDefaultTranslation;

@@ -17,7 +17,7 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("Father", "Otōsan",R.mipmap.family_father, R.raw.family_father));
         words.add(new Word("Mother", "Haha",R.mipmap.family_mother, R.raw.family_mother));
         words.add(new Word("Son", "Musuko",R.mipmap.family_son, R.raw.family_son));

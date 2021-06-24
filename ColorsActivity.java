@@ -19,7 +19,7 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("Grey", "Gurē",R.mipmap.color_gray,R.raw.color_gray));
         words.add(new Word("Green", "Midori",R.mipmap.color_green,R.raw.color_green));
         words.add(new Word("Yellow", "Ki",R.mipmap.color_mustard_yellow,R.raw.color_mustard_yellow));

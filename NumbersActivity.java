@@ -16,7 +16,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("One", "ichi", R.mipmap.number_one, R.raw.number_one));
         words.add(new Word("Two", "ni",R.mipmap.number_two, R.raw.number_two));
         words.add(new Word("Three", "san",R.mipmap.number_three, R.raw.number_three));

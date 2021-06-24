@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 
 import android.app.Activity;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 
 
 public class WordAdapter extends ArrayAdapter<Word> {
-
-
+    private int mColorResourceId;
     private static final String LOG_TAG = WordAdapter.class.getSimpleName();
+
 
     public WordAdapter(Activity context, ArrayList<Word> words) {
         super(context, 0, words);
@@ -41,16 +42,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         ImageView img = (ImageView) list_item_view.findViewById(R.id.imageView);
         if (currentWord.hasImage()){
-        img.setImageResource(currentWord.getImageResourceId());
+            img.setImageResource(currentWord.getImageResourceId());
             img.setVisibility(View.VISIBLE);
         }
         else{
             // Otherwise hide the ImageView (set visibility to GONE)
             img.setVisibility(View.GONE);
         }
+
         return list_item_view;
     }
 }
-
-
-
