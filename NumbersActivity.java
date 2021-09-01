@@ -10,6 +10,13 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,6 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("Ten", "juu",R.mipmap.number_ten, R.raw.number_ten));
 
 
-//      List view is used to reduce memory usage
         WordAdapter adapter = new WordAdapter(this,words);
 
         ListView listView = (ListView) findViewById(R.id.list);
@@ -39,11 +45,28 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
 
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                releaseMediaPlayer();                  //prev sound must stop playing, so that 2 sounds don't play at a time
                 Word word = words.get(position);
 
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getAudioResourceId());
                 mMediaPlayer.start();
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
             }
         });
         }
+
+    @Override
+    protected void onStop() {               //sound must stop immediately when home button is pressed
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+        }
+    }
     }

@@ -6,7 +6,6 @@ import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 
 import android.app.Activity;
@@ -34,8 +33,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
         Word currentWord = getItem(position);
 
-        TextView miwak = (TextView) list_item_view.findViewById(R.id.miwak_text_view) ;
-        miwak.setText(currentWord.getMiwokTranslation());
+        TextView miwak = (TextView) list_item_view.findViewById(R.id.jap_text_view) ;
+        miwak.setText(currentWord.getJapTranslation());
 
         TextView eng = (TextView) list_item_view.findViewById(R.id.default_text_view) ;
         eng.setText(currentWord.getDefaultTranslation());

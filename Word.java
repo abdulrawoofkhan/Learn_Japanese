@@ -3,7 +3,7 @@ package com.example.android.learnjapanese;
 public class Word {
 
     private String mDefaultTranslation;
-    private String mMiwokTranslation;
+    private String mjapTranslation;
     private int mImageResourceId = NO_IMAGE_PROVIDED;
     private int mAudioResourceId;
 
@@ -15,17 +15,17 @@ public class Word {
             */
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId, int audioResourceId) {
+    public Word(String defaultTranslation, String japTranslation, int ImageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
+        mjapTranslation = japTranslation;
         mImageResourceId = ImageResourceId;
         mAudioResourceId = audioResourceId;
 
     }
 
-    public Word(String defaultTranslation, String miwokTranslation,int audioResourceId){
+    public Word(String defaultTranslation, String japTranslation,int audioResourceId){
         mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
+        mjapTranslation = japTranslation;
           mAudioResourceId = audioResourceId;
     }
 
@@ -33,8 +33,8 @@ public class Word {
         return mDefaultTranslation;
     }
 
-    public String getMiwokTranslation() {
-        return mMiwokTranslation;
+    public String getJapTranslation() {
+        return mjapTranslation;
     }
 
     public int getImageResourceId() {
